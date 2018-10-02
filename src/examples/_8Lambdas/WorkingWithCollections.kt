@@ -1,0 +1,36 @@
+package examples._8Lambdas
+
+data class Person(val name: String, val age: Int)
+
+fun main(args: Array<String>) {
+    val people = listOf(
+            Person("Alice", 31),
+            Person("Bob", 29),
+            Person("Carol", 31))
+
+    println(people.filter { it.age > 30 })
+    println(people.map { it.name })
+
+    println(people.maxBy { it.age })
+
+    println(people.any { it.name.startsWith("A") })
+
+    println(people.find { it.age > 30 })
+    println(people.firstOrNull { it.age > 30 })
+
+    val (even, odd) = listOf(1, 2, 3, 4).partition { it % 2 == 0 }
+    println(even)
+    println(odd)
+
+    "abCDa".zip("79371").joinToString()
+
+    println(people.groupBy { it.age })
+    println(people.associateBy { it.name })
+    println(people.associateBy { it.age })
+
+    println(listOf("abc", "123").map {
+        it.toCharArray().toList() })
+
+    println(listOf("abc", "123").flatMap {
+        it.toCharArray().toList() })
+}
