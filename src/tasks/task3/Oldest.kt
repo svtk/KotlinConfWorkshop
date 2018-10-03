@@ -8,7 +8,8 @@ package tasks.task3
 data class Person(val name: String, val age: Int)
 
 fun findOldest(people: List<Person>, requiredNumber: Int): List<String> {
-    TODO()
+    return people.sortedByDescending { it.age }
+            .take(requiredNumber).map { it.name }.sorted()
 }
 
 fun main(args: Array<String>) {

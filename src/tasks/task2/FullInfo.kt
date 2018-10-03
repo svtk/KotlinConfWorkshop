@@ -27,12 +27,14 @@ data class Address(
         val city: String? = null,
         val street: String? = null)
 
+fun String?.orUnspecified() = this ?: "Unspecified"
+
 fun Client.getFullInfo(): String = """
        |name: $name
-       |email: TODO
-       |country: TODO
-       |city: TODO
-       |street: TODO
+       |email: ${personalInfo?.email.orUnspecified()}
+       |country: ${personalInfo?.address?.country.orUnspecified()}
+       |city: ${personalInfo?.address?.city.orUnspecified()}
+       |street: ${personalInfo?.address?.street.orUnspecified()}
     """.trimMargin()
 
 fun main(args: Array<String>) {

@@ -6,7 +6,15 @@ package tasks.task1
  * or underscore and consists of only letters, digits and underscores.
  */
 fun String.isValidIdentifier(): Boolean {
-    TODO()
+    fun isValidCharacter(ch: Char): Boolean = ch == '_' ||
+            ch in 'a'..'z' || ch in 'A'..'Z' ||
+            ch in '0'..'9'
+
+    if (isEmpty() || this[0] in '0'..'9') return false
+    for (ch in this) {
+        if (!isValidCharacter(ch)) return false
+    }
+    return true
 }
 
 fun main(args: Array<String>) {
