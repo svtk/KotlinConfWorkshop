@@ -1,4 +1,4 @@
-package examples._8Lambdas
+package examples._8Lambdas.lambdas
 
 data class Person(val name: String, val age: Int)
 

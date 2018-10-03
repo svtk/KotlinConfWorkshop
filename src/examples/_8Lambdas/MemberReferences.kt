@@ -1,4 +1,4 @@
-package examples._8Lambdas
+package examples._8Lambdas.memberreferences
 
 class Person(val name: String, val age: Int)
 

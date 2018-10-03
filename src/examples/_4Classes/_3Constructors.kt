@@ -1,4 +1,4 @@
-package examples._4Classes
+package examples._4Classes.constructors
 
 class Rectangle(val height: Int, val width: Int) {
 
